@@ -28,7 +28,7 @@ const Login = () => {
     if (!isSignInForm) {
 
     const message = checkValidData(name.current.value, email.current.value, password.current.value);
-    console.log(message);
+    
     setErrorMsg(message);
     if (message) return;
 
@@ -69,7 +69,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in 
           const user = userCredential.user;
-          console.log(user);
+         
         
           // ...
         })

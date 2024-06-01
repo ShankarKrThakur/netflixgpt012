@@ -9,7 +9,7 @@ import { LOGO } from '../utils/constants';
 const Header = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
- // console.log(user);
+
   const navigate = useNavigate();
   const handleSignOut = () => {
     signOut(auth).then(() => {
