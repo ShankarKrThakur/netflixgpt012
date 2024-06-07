@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword ,signInWithEmailAndPassword, updateProfi
 import { auth } from '../utils/firebase';
 import { useDispatch } from 'react-redux';
 import { adduser } from '../utils/userSlice';
+import { BG_URL } from '../utils/constants';
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -38,7 +39,7 @@ const Login = () => {
           // Signed up 
           const user = userCredential.user;
           updateProfile(auth.currentUser, {
-            displayName: name.current.value, photoURL: "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-dyrp6bw6adbulg5b.jpg",
+            displayName: name.current.value, photoURL: "https://wallpapers.com/images/hd/netflix-profile-pictures-1000-x-1000-qo9h82134t9nv0j0.jpg",
           }).then(() => {
             // Profile updated!
             const {uid, email, displayName, photoURL} = auth.currentUser;
@@ -91,7 +92,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img src="https://assets.nflxext.com/ffe/siteui/vlv3/7ca5b7c7-20aa-42a8-a278-f801b0d65fa1/fb548c0a-8582-43c5-9fba-cd98bf27452f/IN-en-20240326-popsignuptwoweeks-perspective_alpha_website_small.jpg" alt="logo" />
+        <img src={BG_URL} alt="logo" />
       </div>
       <form onClick={(e) => e.preventDefault()} className="absolute p-12 bg-black w-3/12 my-36 mx-auto left-0 right-0 text-white opacity-80">
         <h1 className="font-bold text-3xl p-2 my-2">{isSignInForm ? "Sign In" : "Sign Up"}</h1>
